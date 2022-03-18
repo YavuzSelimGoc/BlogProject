@@ -1,0 +1,37 @@
+﻿@model EntityLayer.Concrete.Blog
+@{
+    ViewData["Title"] = "BlogAdd";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<h1>Yeni Blog Girişi</h1>
+@using (Html.BeginForm("BlogAdd", "Blog", FormMethod.Post))
+{
+    <div class="col-md-6 mb-3">
+        <label for="validationCustom01">Baslik Adi</label>
+        @Html.TextBoxFor(x => x.BlogTitle, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.BlogTitle)
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="validationCustom01">Blog İcerik</label>
+        @Html.TextAreaFor(x => x.BlogTitle, 10, 3, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.BlogTitle)
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="validationCustom01">Blog Görseli</label>
+        @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.BlogImage)
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="validationCustom01">Blog küçük Görseli</label>
+        @Html.TextBoxFor(x => x.BlogThumbnailImage, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.BlogThumbnailImage)
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="validationCustom01">Kategori</label>
+        @Html.DropDownListFor(x=>x.CategoryID,(List<SelectListItem>)ViewBag.cv ,new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CategoryID)
+    </div>
+    <button class="btn btn-success">OLUŞTUR</button>
+
+}

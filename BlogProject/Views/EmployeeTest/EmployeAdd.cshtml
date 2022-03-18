@@ -1,0 +1,13 @@
+﻿@model BlogProject.Controllers.EmployeeTestController.ClasseMP
+@{
+    ViewData["Title"] = "EmployeAdd";
+    Layout = "~/Views/Shared/AdminLayout_.cshtml";
+}
+
+<form method="post">
+
+    <label>calisan adi soyadi</label>
+    <input type="text" asp-for="@Model.EmployerName"  class="form-control" /><br />
+    <button type="submit" class="btn btn-primary">ZORTLA</button>
+</form>
+

@@ -1,0 +1,32 @@
+﻿@model EntityLayer.Concrete.Messages
+@{
+    ViewData["Title"] = "MessageDetails";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<h1>Mesaj Detay</h1>
+<div class="col-md-6 mb-3">
+    @Html.HiddenFor(x => x.MessageID, new { @class = "form-control" })
+</div>
+<div class="col-md-6 mb-3">
+    <label for="validationCustom01">Gönderen</label>
+    @Html.TextBoxFor(x => x.SenderUser.WriterName, new { @class = "form-control" })
+</div>
+<div class="col-md-6 mb-3">
+    <label for="validationCustom01">Konu</label>
+    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+</div>
+<div class="col-md-6 mb-3">
+    <label for="validationCustom01">Mesaj</label>
+    @Html.TextBoxFor(x => x.MessageDetails, new { @class = "form-control" })
+</div>
+<div class="col-md-6 mb-3">
+    <label for="validationCustom01">Mesaj Tarihi</label>
+    @Html.TextBoxFor(x => x.MessageDate, new { @class = "form-control" })
+</div>
+
+<button class="btn btn-success">GÜNCELLE</button>
+
+
+
+

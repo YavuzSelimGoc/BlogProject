@@ -1,0 +1,26 @@
+﻿
+@model IEnumerable<BlogProject.Controllers.EmployeeTestController.ClasseMP>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout_.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>SİL</th>
+        <th>GĞNCELLE</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EmployerID</td>
+            <td>@item.EmployerName</td>
+             <td><a href="EmployeeTestController/EmployeeDelete/@item.EmployerID/" class="btn btn-danger">SİL</a></td>  
+             <td><a href="EmployeeUpdate/@item.EmployerID/" class="btn btn-success">düzenle</a></td>  
+        </tr>
+    }
+    <a href="/EmployeeTest/EmployeAdd" class="btn btn-danger">GİT AQ </a>
+</table>
+
